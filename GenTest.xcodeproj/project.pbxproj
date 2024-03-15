@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA28D53C2BA213E0003A4797 /* ObservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28D53B2BA213E0003A4797 /* ObservationForm.swift */; };
+		DA58F1342B9F72D600C1F5A1 /* WillCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58F1332B9F72D600C1F5A1 /* WillCallView.swift */; };
+		DA58F1382B9FA40000C1F5A1 /* GetBranchWillCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58F1372B9FA40000C1F5A1 /* GetBranchWillCallAPI.swift */; };
+		DA58F13A2B9FA52400C1F5A1 /* TicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58F1392B9FA52400C1F5A1 /* TicketModel.swift */; };
+		DA58F13C2B9FB1A600C1F5A1 /* StoreTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58F13B2B9FB1A600C1F5A1 /* StoreTickets.swift */; };
+		DA58F13E2B9FB59000C1F5A1 /* BranchTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58F13D2B9FB59000C1F5A1 /* BranchTickets.swift */; };
 		DAD33FFB2B979DAB0060001B /* GenTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FFA2B979DAB0060001B /* GenTestApp.swift */; };
-		DAD33FFD2B979DAB0060001B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FFC2B979DAB0060001B /* ContentView.swift */; };
 		DAD33FFF2B979DAC0060001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FFE2B979DAC0060001B /* Assets.xcassets */; };
 		DAD340022B979DAC0060001B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD340012B979DAC0060001B /* Preview Assets.xcassets */; };
 		DAD3400C2B979DAC0060001B /* GenTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3400B2B979DAC0060001B /* GenTestTests.swift */; };
 		DAD340162B979DAC0060001B /* GenTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340152B979DAC0060001B /* GenTestUITests.swift */; };
 		DAD340182B979DAC0060001B /* GenTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340172B979DAC0060001B /* GenTestUITestsLaunchTests.swift */; };
+		DAD340292B979E820060001B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340282B979E820060001B /* Main.swift */; };
+		DAD3402B2B979F2A0060001B /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3402A2B979F2A0060001B /* LoginScreen.swift */; };
+		DAD3402D2B979F820060001B /* LoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3402C2B979F820060001B /* LoginAPI.swift */; };
+		DAD3402F2B97A3190060001B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3402E2B97A3190060001B /* User.swift */; };
+		DAD340312B97A9320060001B /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340302B97A9320060001B /* LoginUserModel.swift */; };
+		DAD340332B97B0EF0060001B /* StoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340322B97B0EF0060001B /* StoreUser.swift */; };
+		DAD340352B97B3320060001B /* OtherScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340342B97B3320060001B /* OtherScreen.swift */; };
+		DAD340392B97CDEB0060001B /* GetUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340382B97CDEB0060001B /* GetUserAPI.swift */; };
+		DAD3403B2B97CE330060001B /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3403A2B97CE330060001B /* GetUserModel.swift */; };
+		DAD340412B98D0920060001B /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340402B98D0920060001B /* LoginPage.swift */; };
+		DAD340432B98D1BC0060001B /* ManagerDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340422B98D1BC0060001B /* ManagerDashboard.swift */; };
+		DAD340452B98D1DE0060001B /* TMDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340442B98D1DE0060001B /* TMDashboard.swift */; };
+		DAD340472B98E9380060001B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340462B98E9380060001B /* ErrorView.swift */; };
+		DAD3404B2B990C120060001B /* OperationDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3404A2B990C120060001B /* OperationDashboard.swift */; };
+		DAD3404D2B990C2A0060001B /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3404C2B990C2A0060001B /* AdminDashboard.swift */; };
+		DAD3404F2B9915000060001B /* testPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3404E2B9915000060001B /* testPage.swift */; };
+		DAD340552B9921160060001B /* SaferBuckForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340542B9921160060001B /* SaferBuckForms.swift */; };
+		DAD340572B9927230060001B /* AssetPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340562B9927230060001B /* AssetPage.swift */; };
+		DAD340592B992A550060001B /* Pickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD340582B992A550060001B /* Pickers.swift */; };
+		DAD3405B2B9A2F070060001B /* Branches.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3405A2B9A2F070060001B /* Branches.swift */; };
+		DAD3405D2B9A3E470060001B /* TMDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3405C2B9A3E470060001B /* TMDetailedView.swift */; };
+		DAD3405F2B9A67DD0060001B /* SelectBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD3405E2B9A67DD0060001B /* SelectBranch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA28D53B2BA213E0003A4797 /* ObservationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationForm.swift; sourceTree = "<group>"; };
+		DA58F1332B9F72D600C1F5A1 /* WillCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillCallView.swift; sourceTree = "<group>"; };
+		DA58F1372B9FA40000C1F5A1 /* GetBranchWillCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBranchWillCallAPI.swift; sourceTree = "<group>"; };
+		DA58F1392B9FA52400C1F5A1 /* TicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModel.swift; sourceTree = "<group>"; };
+		DA58F13B2B9FB1A600C1F5A1 /* StoreTickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTickets.swift; sourceTree = "<group>"; };
+		DA58F13D2B9FB59000C1F5A1 /* BranchTickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchTickets.swift; sourceTree = "<group>"; };
 		DAD33FF72B979DAB0060001B /* GenTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD33FFA2B979DAB0060001B /* GenTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenTestApp.swift; sourceTree = "<group>"; };
-		DAD33FFC2B979DAB0060001B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAD33FFE2B979DAC0060001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAD340012B979DAC0060001B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAD340072B979DAC0060001B /* GenTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +76,28 @@
 		DAD340112B979DAC0060001B /* GenTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD340152B979DAC0060001B /* GenTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenTestUITests.swift; sourceTree = "<group>"; };
 		DAD340172B979DAC0060001B /* GenTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DAD340282B979E820060001B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		DAD3402A2B979F2A0060001B /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		DAD3402C2B979F820060001B /* LoginAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPI.swift; sourceTree = "<group>"; };
+		DAD3402E2B97A3190060001B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DAD340302B97A9320060001B /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
+		DAD340322B97B0EF0060001B /* StoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreUser.swift; sourceTree = "<group>"; };
+		DAD340342B97B3320060001B /* OtherScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherScreen.swift; sourceTree = "<group>"; };
+		DAD340382B97CDEB0060001B /* GetUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserAPI.swift; sourceTree = "<group>"; };
+		DAD3403A2B97CE330060001B /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
+		DAD340402B98D0920060001B /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		DAD340422B98D1BC0060001B /* ManagerDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerDashboard.swift; sourceTree = "<group>"; };
+		DAD340442B98D1DE0060001B /* TMDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDashboard.swift; sourceTree = "<group>"; };
+		DAD340462B98E9380060001B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		DAD3404A2B990C120060001B /* OperationDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDashboard.swift; sourceTree = "<group>"; };
+		DAD3404C2B990C2A0060001B /* AdminDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboard.swift; sourceTree = "<group>"; };
+		DAD3404E2B9915000060001B /* testPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testPage.swift; sourceTree = "<group>"; };
+		DAD340542B9921160060001B /* SaferBuckForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaferBuckForms.swift; sourceTree = "<group>"; };
+		DAD340562B9927230060001B /* AssetPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPage.swift; sourceTree = "<group>"; };
+		DAD340582B992A550060001B /* Pickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pickers.swift; sourceTree = "<group>"; };
+		DAD3405A2B9A2F070060001B /* Branches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branches.swift; sourceTree = "<group>"; };
+		DAD3405C2B9A3E470060001B /* TMDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDetailedView.swift; sourceTree = "<group>"; };
+		DAD3405E2B9A67DD0060001B /* SelectBranch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBranch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA58F1352B9F730C00C1F5A1 /* UserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DAD340382B97CDEB0060001B /* GetUserAPI.swift */,
+				DAD3402C2B979F820060001B /* LoginAPI.swift */,
+			);
+			path = UserAPI;
+			sourceTree = "<group>";
+		};
+		DA58F1362B9F73A000C1F5A1 /* WillCallAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DA58F1372B9FA40000C1F5A1 /* GetBranchWillCallAPI.swift */,
+			);
+			path = WillCallAPI;
+			sourceTree = "<group>";
+		};
 		DAD33FEE2B979DAB0060001B = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				DAD33FFA2B979DAB0060001B /* GenTestApp.swift */,
-				DAD33FFC2B979DAB0060001B /* ContentView.swift */,
 				DAD33FFE2B979DAC0060001B /* Assets.xcassets */,
+				DAD340252B979E2C0060001B /* Models */,
+				DAD340242B979E250060001B /* API's */,
+				DAD340272B979E550060001B /* Views */,
+				DAD340262B979E400060001B /* ObservableState */,
 				DAD340002B979DAC0060001B /* Preview Content */,
 			);
 			path = GenTest;
@@ -125,6 +199,61 @@
 				DAD340172B979DAC0060001B /* GenTestUITestsLaunchTests.swift */,
 			);
 			path = GenTestUITests;
+			sourceTree = "<group>";
+		};
+		DAD340242B979E250060001B /* API's */ = {
+			isa = PBXGroup;
+			children = (
+				DA58F1362B9F73A000C1F5A1 /* WillCallAPI */,
+				DA58F1352B9F730C00C1F5A1 /* UserAPI */,
+			);
+			path = "API's";
+			sourceTree = "<group>";
+		};
+		DAD340252B979E2C0060001B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAD340302B97A9320060001B /* LoginUserModel.swift */,
+				DA58F1392B9FA52400C1F5A1 /* TicketModel.swift */,
+				DAD3403A2B97CE330060001B /* GetUserModel.swift */,
+				DAD3405A2B9A2F070060001B /* Branches.swift */,
+				DA58F13B2B9FB1A600C1F5A1 /* StoreTickets.swift */,
+				DAD340322B97B0EF0060001B /* StoreUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAD340262B979E400060001B /* ObservableState */ = {
+			isa = PBXGroup;
+			children = (
+				DAD3402E2B97A3190060001B /* User.swift */,
+				DA58F13D2B9FB59000C1F5A1 /* BranchTickets.swift */,
+			);
+			path = ObservableState;
+			sourceTree = "<group>";
+		};
+		DAD340272B979E550060001B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAD340282B979E820060001B /* Main.swift */,
+				DAD340462B98E9380060001B /* ErrorView.swift */,
+				DAD3404C2B990C2A0060001B /* AdminDashboard.swift */,
+				DAD340402B98D0920060001B /* LoginPage.swift */,
+				DAD3404E2B9915000060001B /* testPage.swift */,
+				DAD340422B98D1BC0060001B /* ManagerDashboard.swift */,
+				DAD3405E2B9A67DD0060001B /* SelectBranch.swift */,
+				DA28D53B2BA213E0003A4797 /* ObservationForm.swift */,
+				DAD340582B992A550060001B /* Pickers.swift */,
+				DAD340442B98D1DE0060001B /* TMDashboard.swift */,
+				DA58F1332B9F72D600C1F5A1 /* WillCallView.swift */,
+				DAD3405C2B9A3E470060001B /* TMDetailedView.swift */,
+				DAD3404A2B990C120060001B /* OperationDashboard.swift */,
+				DAD340562B9927230060001B /* AssetPage.swift */,
+				DAD340542B9921160060001B /* SaferBuckForms.swift */,
+				DAD340342B97B3320060001B /* OtherScreen.swift */,
+				DAD3402A2B979F2A0060001B /* LoginScreen.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +386,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD33FFD2B979DAB0060001B /* ContentView.swift in Sources */,
+				DA58F13C2B9FB1A600C1F5A1 /* StoreTickets.swift in Sources */,
+				DAD3404D2B990C2A0060001B /* AdminDashboard.swift in Sources */,
+				DAD3404F2B9915000060001B /* testPage.swift in Sources */,
+				DAD340312B97A9320060001B /* LoginUserModel.swift in Sources */,
+				DAD3402D2B979F820060001B /* LoginAPI.swift in Sources */,
+				DA58F1342B9F72D600C1F5A1 /* WillCallView.swift in Sources */,
+				DAD340292B979E820060001B /* Main.swift in Sources */,
+				DAD3405D2B9A3E470060001B /* TMDetailedView.swift in Sources */,
+				DAD340592B992A550060001B /* Pickers.swift in Sources */,
 				DAD33FFB2B979DAB0060001B /* GenTestApp.swift in Sources */,
+				DAD340332B97B0EF0060001B /* StoreUser.swift in Sources */,
+				DAD3403B2B97CE330060001B /* GetUserModel.swift in Sources */,
+				DAD3405B2B9A2F070060001B /* Branches.swift in Sources */,
+				DAD340412B98D0920060001B /* LoginPage.swift in Sources */,
+				DAD340572B9927230060001B /* AssetPage.swift in Sources */,
+				DA28D53C2BA213E0003A4797 /* ObservationForm.swift in Sources */,
+				DAD3402F2B97A3190060001B /* User.swift in Sources */,
+				DAD3405F2B9A67DD0060001B /* SelectBranch.swift in Sources */,
+				DAD340452B98D1DE0060001B /* TMDashboard.swift in Sources */,
+				DAD340352B97B3320060001B /* OtherScreen.swift in Sources */,
+				DA58F1382B9FA40000C1F5A1 /* GetBranchWillCallAPI.swift in Sources */,
+				DAD340392B97CDEB0060001B /* GetUserAPI.swift in Sources */,
+				DAD3404B2B990C120060001B /* OperationDashboard.swift in Sources */,
+				DA58F13A2B9FA52400C1F5A1 /* TicketModel.swift in Sources */,
+				DA58F13E2B9FB59000C1F5A1 /* BranchTickets.swift in Sources */,
+				DAD340552B9921160060001B /* SaferBuckForms.swift in Sources */,
+				DAD340432B98D1BC0060001B /* ManagerDashboard.swift in Sources */,
+				DAD3402B2B979F2A0060001B /* LoginScreen.swift in Sources */,
+				DAD340472B98E9380060001B /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
