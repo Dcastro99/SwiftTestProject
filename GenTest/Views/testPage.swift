@@ -10,17 +10,32 @@ import SwiftUI
 
 
 struct testPage: View {
-    
- 
+    @State private var isChecked = false
     
     var body: some View {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        let dateString = formatter.string(from: Date())
-        
-        return Text("Today's Date: \(dateString)")
-            .padding()
+        VStack(alignment: .leading){
+            HStack{
+                Toggle("", isOn: $isChecked)
+                    .toggleStyle(Checkbox())
+                    .font(.system(size: 25))
+    //                .padding()
+                Text("Battery")
+            }
+            HStack{
+                Toggle("", isOn: $isChecked)
+                    .toggleStyle(Checkbox())
+                    .font(.system(size: 25))
+                //                .padding()
+                Text("Accelorator")
+            }
+            HStack{
+                Toggle("", isOn: $isChecked)
+                    .toggleStyle(Checkbox())
+                    .font(.system(size: 25))
+                //                .padding()
+                Text("Steering Wheel")
+            }
+        }
     }
 }
 

@@ -17,12 +17,14 @@ struct WillCallView: View {
     private var newUrl = URL(string: "https://res.cloudinary.com/drxpgaiaw/image/upload/v1701714370/willCall/izvs1g6klwhqtgtymord.jpg")
     private var  bgColor = #colorLiteral(red: 0.6237647913, green: 0.6237647913, blue: 0.6237647913, alpha: 0.2984788907)
   private var mainBgColor = #colorLiteral(red: 0.8131273912, green: 0.7377171282, blue: 0.578667129, alpha: 0.3209592301)
+    let mainBG = #colorLiteral(red: 0.9914150834, green: 0.9771276116, blue: 0.9294666648, alpha: 1)
+    let cardColor = #colorLiteral(red: 0.9265309343, green: 0.9265309343, blue: 0.9265309343, alpha: 1)
  
     
     var body: some View {
         
     ZStack  {
-        Color(mainBgColor).ignoresSafeArea(.all)
+        Color(mainBG).ignoresSafeArea(.all)
       
           ScrollView {
               VStack(spacing: 10) {
@@ -32,8 +34,8 @@ struct WillCallView: View {
                           
                           ZStack{
                               RoundedRectangle(cornerRadius: 20)
-                                  .foregroundStyle(Color(bgColor))
-                              
+                                  .foregroundStyle(Color.white)
+                                  .shadow(radius: 1, x: -2, y: 5)
                               VStack{
                                   Spacer()
                                   VStack{
@@ -81,7 +83,7 @@ struct WillCallView: View {
                                       
 
                                           Text(ticket.customerName)
-                                          .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                          .font(.title)
                                           .foregroundStyle(Color.accentColor)
 
                                               .padding(.vertical,8)
@@ -90,7 +92,7 @@ struct WillCallView: View {
                                           .font(.caption)
 
                                           Text(ticket.customerPO)
-                                          .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                          .font(.title)
                                           .foregroundStyle(Color.accentColor)
 
                                             .padding(.vertical,8)
@@ -99,11 +101,11 @@ struct WillCallView: View {
                                           .font(.caption)
                                       
                                       Text(ticket.orderNumber)
-                                          .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                          .font(.title)
                                           .foregroundStyle(Color.accentColor)
-
+                                      
                                           .padding(.vertical,8)
-    Divider()
+                                      Divider()
                                           .padding(.horizontal,25)
                                   }
                                   .padding(40)
@@ -111,7 +113,7 @@ struct WillCallView: View {
                               }
                               
                           }
-                         
+//                          .shadow(radius: 1, x: -2, y: 5)
                           .padding(.horizontal,50)
 
                       }

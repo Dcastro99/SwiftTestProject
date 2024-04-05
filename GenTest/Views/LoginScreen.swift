@@ -19,14 +19,17 @@ struct LoginScreen: View {
     @AppStorage("first_login") var firstLogin: Bool = false
     @EnvironmentObject var storeUser: UserObs
     @EnvironmentObject var storedTickets: BranchTickets
+    @FocusState private var isEmailFocused: Bool
+    @FocusState private var isPassFocused: Bool
     
     let logo = URL(string: "https://i.imgur.com/t8VrqzM.png")
-    var color = #colorLiteral(red: 0.5824416273, green: 0.5284253972, blue: 0.4144981807, alpha: 0.3209592301)
-    let bgColor = #colorLiteral(red: 0.8131273912, green: 0.7377171282, blue: 0.578667129, alpha: 0.3209592301)
+
+    let mainBG = #colorLiteral(red: 0.9914150834, green: 0.9771276116, blue: 0.9294666648, alpha: 1)
+    let bColor = #colorLiteral(red: 0.9246651786, green: 0.8929483754, blue: 0.8376240318, alpha: 1)
     var body: some View {
         
         ZStack{
-            Color(bgColor).ignoresSafeArea(.all)
+            Color(mainBG).ignoresSafeArea(.all)
             VStack {
                 Spacer()
                 Rectangle()
@@ -47,10 +50,34 @@ struct LoginScreen: View {
                 Spacer()
                 TextField("Email", text: $email)
                     .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .background(
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color.white)
+                        
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(isEmailFocused ? Color.orange : Color.black, lineWidth: 0.5)
+                            )
+                    )
+                    .focused($isEmailFocused)
+                    .padding(.horizontal,25)
+                    .padding(.bottom,20)
                 SecureField("Password", text: $password)
                     .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .background(
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color.white)
+                        
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(isPassFocused ? Color.orange : Color.black, lineWidth: 0.5)
+                            )
+                    )
+                    .focused($isPassFocused)
+                    .padding(.horizontal,25)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                Spacer()
                 Spacer()
                 Button(action: {
                     Task {
@@ -116,11 +143,11 @@ struct LoginScreen: View {
                 
             }
             
-            .frame(maxWidth: 400, maxHeight: 600)
+            .frame(maxWidth: 400, maxHeight: 700)
             .navigationBarBackButtonHidden(true)
             .frame(maxWidth: 400)
-            .background(Color(color))
-            .cornerRadius(20)
+            .background(Color(bColor))
+            .cornerRadius(10)
             .padding()
             
         }

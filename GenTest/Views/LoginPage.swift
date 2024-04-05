@@ -29,9 +29,11 @@ struct LoginPage: View {
             .onAppear{
                 print("in login Page")
                 if (userToken != nil) {
+                    print("user token exists")
                     Task {
                         do {
                             user = try await GetUser(token: userToken, storeUser: storedUser)
+//                            print("user in login \(String(describing: user))")
                         }
                     }
                 }

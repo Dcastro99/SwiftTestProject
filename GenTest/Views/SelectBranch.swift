@@ -17,7 +17,7 @@ struct SelectBranch: View {
             
             BranchListView(selectedBranch: $selectedBranch)
 //            
-                .onChange(of: selectedBranch) { oldValue, newValue in
+                .onChange(of: selectedBranch) {  newValue in
                     if let branchId = newValue?.id {
                         storedUser.updateBranchId(branchId: branchId)
 //                        print(storedUser.user)

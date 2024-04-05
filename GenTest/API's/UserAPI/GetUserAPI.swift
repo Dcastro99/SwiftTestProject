@@ -23,15 +23,18 @@ func GetUser(token: String?, storeUser: UserObs) async throws -> GetUserModel {
     request.addValue("Bearer \(unwrappedJwtToken)", forHTTPHeaderField: "Authorization")
     
     let (data, response) = try await URLSession.shared.data(for: request)
-    
+//    print(data)
     guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        print("data error")
+        // Need to properly handle this call
+        UserSession.signOut()
         throw GetUserError.invalidResponse
     }
     do {
         print("GET-USER")
         let decoder = JSONDecoder()
         //            decoder.keyDecodingStrategy = .convertFromSnakeCase
-        //            print(data)
+                  
         //            return try decoder.decode(UserData2.self, from: data)
         let userModel = try decoder.decode(GetUserModel.self, from: data)
         DispatchQueue.main.async {

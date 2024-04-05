@@ -9,25 +9,32 @@ import SwiftUI
 
 struct ObservationForm: View {
     @EnvironmentObject var storedUser: UserObs
-    var tm = ["Banana","Apple", "Peach", "Watermelon", "Grapes" ]
+    
+    @AppStorage("token") var userToken: String?
+  
+    @State private var users: [GetAllUsersModel]?
+    @State private var selectedTMIndex = 0
+    @State private var selectedAnswers: [Answers] = Array(repeating: .no, count: 3)
+    @State var answer: Answers = .yes
+    @State var notes: String = ""
+   
     var questions = [
         "Did you lift properly?",
         "Did you follow safety protocols?",
         "Did you wear appropriate gear?"
     ]
-    @State var notes: String = ""
-    @State private var selectedTMIndex = 0
-    @State var answer: Answers = .yes
-    @State private var selectedAnswers: [Answers] = Array(repeating: .no, count: 3)
     let bgColor = #colorLiteral(red: 0.8131273912, green: 0.7377171282, blue: 0.578667129, alpha: 0.3209592301)
+    let mainBG = #colorLiteral(red: 0.9914150834, green: 0.9771276116, blue: 0.9294666648, alpha: 1)
     
-    
+    // MARK: BODY
     var body: some View {
-        let dateString = formatLongDate(from: Date())
+        let placeholder = "Enter notes here..."
+        let currentDateTime = Date()
+        let dateString = formatLongDate(from: currentDateTime)
         let timeString = formatTime(from: Date())
            
             ZStack{
-                Color(bgColor)
+                Color(mainBG)
                     .ignoresSafeArea()
                 VStack{
                     Spacer()
@@ -36,13 +43,15 @@ struct ObservationForm: View {
                         HStack {
                             
                             VStack{
-                                Text("Today's Date: \(dateString)")
-                                    .padding()
+                              
+                                  
                                 Text("Observation Form")
-                                    .font(.largeTitle)
+                                    .font(.title)
                                     .fontWeight(.bold)
                                 
                                 Divider()
+                                    .background(Color.gray)
+                                    .padding(.horizontal,100)
                                 
                                 Spacer()
                                 
@@ -54,16 +63,18 @@ struct ObservationForm: View {
                                         HStack{
                                             Text("Team Member Name: ")
                                             Menu {
-                                                ForEach(0..<tm.count, id: \.self) { index in
+                                                
+                                                ForEach(0..<(users?.count ?? 0), id: \.self) {
+                                                    index in
                                                     Button(action: {
                                                         selectedTMIndex = index
                                                     }) {
-                                                        Text(tm[index])
+                                                        Text(users?[index].name ?? "Unknown")
                                                     }
                                                 }
-                                            }
-                                        label: {
-                                            Text(tm[selectedTMIndex])
+                                            } label: {
+                                                Text(users?[selectedTMIndex].name ?? "Select Team Member")
+                                                    .fontWeight(.bold)
                                             }
                                             
                                             Spacer()
@@ -90,7 +101,8 @@ struct ObservationForm: View {
                                         }
                                         HStack{
                                             Text("Branch")
-                                            Text("4")
+                                            Text("\(storedUser.user?.branchId ?? 0 )")
+                                                .fontWeight(.bold)
                                         }
                                         HStack{
                                             Text("Time: ")
@@ -103,31 +115,38 @@ struct ObservationForm: View {
                                     Spacer()
                                 }
                                 .padding()
-            //                    .border(Color.red)
-                                
-            //                    Spacer()
+
                                 //--------------SPACER RECTANGLE----------------//
                                Rectangle()
                                     .fill(.gray)
-                                    .frame(height: 2)
+                                    .frame(height: 3)
                                     .edgesIgnoringSafeArea(.horizontal)
                                 
-                                TextEditor(text: $notes)
-                                    .frame(height: 75)
-                                    .background(.ultraThinMaterial)
-                                    .cornerRadius(10)
-                                    .padding()
+                                ZStack(alignment: .topLeading){
+                                    if notes.isEmpty {
+                                        Text(placeholder)
+                                            .foregroundColor(.gray)
+                                            .padding(.horizontal, 20)
+                                            .padding(.vertical, 25)
+                                    }
+                                    TextEditor(text: $notes)
+                                        .frame(height: 75)
+                                        
+                                        .cornerRadius(10)
+                                        .padding()
+                                        .padding(.top,30)
+                                }
+                                .background(.ultraThinMaterial)
+                                .padding(.top,50)
                                 Spacer()
                                 Text("Observation Questions")
                                     .font(.headline)
                                 VStack(alignment: .leading) {
                                     
-            //                        Spacer()
                                     ForEach(questions.indices, id: \.self) { index in
                                         QuestionPicker(question: questions[index], answer: $selectedAnswers[index])
                                         Divider()
                                     }
-            //
                                    
                                 }
                               
@@ -136,15 +155,8 @@ struct ObservationForm: View {
                                     
                             } // Main Vstack
                             .padding()
-                            
-            //                .frame(maxWidth: UIScreen.main.bounds.width * 0.8)
-                           
-                            
                             .padding(.horizontal,20)
                         }
-                        
-        //                .border(Color.black)
-            //            .cornerRadius(8)
                     }
                     .scrollContentBackground(.hidden)
                     .scrollDisabled(true)
@@ -157,11 +169,12 @@ struct ObservationForm: View {
                             resetSelectedAnswers()
                         }
                         print("notes: \(notes)")
+                    print("Current Time: \(currentDateTime)")
                         
                     }, label: {
                         Text("Submit")
-                            .font(.title2)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .font(.title)
+                            .foregroundStyle(Color.accentColor)
                             .padding(.horizontal ,50)
                             .padding(.vertical,20)
                             .background(Color.black)
@@ -171,27 +184,26 @@ struct ObservationForm: View {
                     Spacer()
                 }
             }
+            .onAppear{
+                Task {
+                    do {
+                        users = try await GetAllUsers(token: userToken, id: storedUser.user?.branchId ?? 0)
+                       
+                        users = users?.filter { $0.role != 1 && $0.role != 2 && $0.role != 3 }
+                      
+                    }
+                }
+            }
         
         }
+    // MARK: FUNCTIONS
+    
     func resetSelectedAnswers() {
         selectedAnswers = Array(repeating: .no, count: 3)
         $notes.wrappedValue = ""
         selectedTMIndex = 0
     }
     
-    func formatLongDate(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        return formatter.string(from: date)
-    }
-    func formatTime(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
-    }
-
 }
 
 #Preview {
@@ -199,23 +211,3 @@ struct ObservationForm: View {
 }
 
 
-struct QuestionPicker: View {
-    var question: String
-    @Binding var answer: Answers
-    
-    var body: some View{
-        
-        Picker(selection: $answer) {
-            Text("Yes").tag(Answers.yes)
-            Text("No").tag(Answers.no)
-        } label: {
-            Text(question)
-        }
-    }
-}
-
-
-enum Answers: String {
-    case yes = "Yes"
-    case no = "No"
-}
